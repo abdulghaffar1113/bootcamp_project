@@ -1,6 +1,7 @@
 import { useWorkoutsContext } from '../hooks/useWorkoutsContext'
 import { useAuthContext } from '../hooks/useAuthContext'
-
+import Card from 'react-bootstrap/Card';
+import 'bootstrap/dist/css/bootstrap.min.css';
 // date fns
 import formatDistanceToNow from 'date-fns/formatDistanceToNow'
 
@@ -28,13 +29,31 @@ const WorkoutDetails = ({ workout }) => {
 
   return (
     <div className="workout-details">
-      <h4>{workout.name}</h4>
-      <p><strong>Description: </strong>{workout.desc}</p>
-      <p><strong>Activity: </strong>{workout.type}</p>
-      <p><strong>Duration: </strong>{workout.duration}</p>
-      <p><strong>Date: </strong>{workout.date}</p>
-      <p>{formatDistanceToNow(new Date(workout.createdAt), { addSuffix: true })}</p>
-      <span className="material-symbols-outlined" onClick={handleClick} style={{color:"red"}}>delete</span>
+      <Card>
+      <Card.Header as='h4'>{workout.name}</Card.Header>
+      <Card.Body>
+        <Card.Text>
+        <p><strong>Description: </strong>{workout.desc}</p>
+        </Card.Text>
+
+        <Card.Text>
+        <p><strong>Activity: </strong>{workout.type}</p>
+        </Card.Text>
+
+        <Card.Text>
+        <p><strong>Duration: </strong>{workout.duration}</p>
+        </Card.Text>
+
+        <Card.Text>
+        <p><strong>Date: </strong>{workout.date}</p>
+        </Card.Text>
+
+        <Card.Text>
+        <span className="material-symbols-outlined" onClick={handleClick} style={{color:"red"}}>delete</span>
+        </Card.Text>
+         
+      </Card.Body>
+    </Card>
     </div>
   )
 }

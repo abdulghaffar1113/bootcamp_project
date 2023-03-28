@@ -96,7 +96,7 @@ const WorkoutForm = () => {
         //className={emptyFields.includes('date') ? 'error' : ''}
       />
 
-      <button style={{backgroundColor:"skyblue",color:"black",border:"1px solid black",fontWeight:"bold"}}>Add Workout</button>
+      <button style={{backgroundColor:"skyblue",color:"black",border:"1px solid black",fontWeight:"bold",margin:"5px"}}>Add Workout</button>
       {error && <div className="error">{error}</div>}
     </form>
   )
